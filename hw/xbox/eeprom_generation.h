@@ -25,6 +25,11 @@
 #include "crypto/random.h"
 #include "include/qemu/bswap.h"
 
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+#endif
+
 typedef struct RC4Context {
     uint8_t s[256];
 } RC4Context;
