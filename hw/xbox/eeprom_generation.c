@@ -204,7 +204,7 @@ static void xbox_sha1_compute(SHA1Context *ctx, XboxEEPROMVersion ver,
 
 bool xbox_eeprom_generate(const char *file, XboxEEPROMVersion ver) {
 #ifdef _WIN32
-    SetFileApisToOEM();
+    SetFileApisToOEM(); // Use UTF-8 for paths on windows
 #endif
     
     XboxEEPROM e;
