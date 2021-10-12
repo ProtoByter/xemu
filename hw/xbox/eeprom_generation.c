@@ -203,6 +203,10 @@ static void xbox_sha1_compute(SHA1Context *ctx, XboxEEPROMVersion ver,
 }
 
 bool xbox_eeprom_generate(const char *file, XboxEEPROMVersion ver) {
+#ifdef _WIN32
+    SetFileApisToOEM();
+#endif
+    
     XboxEEPROM e;
     memset(&e, 0, sizeof(e));
 
